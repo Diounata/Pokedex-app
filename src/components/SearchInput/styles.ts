@@ -21,8 +21,4 @@ const Title = styled.Text`
   font-size: 12px;
 `;
 
-const Image = styled.Image`
-  margin-right: 8px;
-`;
-
-export { Container, TitleContainer, Title, Image };
+export { Container, TitleContainer, Title };

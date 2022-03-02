@@ -1,12 +1,12 @@
-import { Container, TitleContainer, Title, Image } from './styles';
+import { Container, TitleContainer, Title } from './styles';
 
-import searchImg from '../../assets/search.png';
+import { AntDesign } from '@expo/vector-icons';
 
 export function SearchInput() {
   return (
     <Container>
       <TitleContainer>
-        <Image source={searchImg} />
+        <AntDesign name="search1" size={12} color="#666" style={{ marginRight: 10 }} />
 
         <Title>Search</Title>
       </TitleContainer>
