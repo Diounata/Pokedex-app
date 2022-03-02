@@ -19,8 +19,13 @@ const Title = styled.Text`
 const PokeballImage = styled.Image`
   width: 24px;
   height: 24px;
+
   margin-right: 16px;
-  margin-top: -5px;
 `;
 
-export { Container, TitleContainer, Title, PokeballImage };
+const SortContainer = styled.View`
+  flex-direction: row;
+  align-items: center;
+`;
+
+export { Container, TitleContainer, Title, PokeballImage, SortContainer };
