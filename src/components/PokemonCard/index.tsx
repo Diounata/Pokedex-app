@@ -4,14 +4,14 @@ import { Image } from 'react-native';
 export function PokemonCard() {
   return (
     <Container>
-      <PokemonID>#999</PokemonID>
+      <PokemonID>#144</PokemonID>
 
       <Image
-        source={{ uri: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/5.png' }}
-        style={{ flex: 1, width: '80%', alignSelf: 'center' }}
+        source={{ uri: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/144.png' }}
+        style={{ flex: 1, width: '100%', resizeMode: 'contain' }}
       />
 
-      <PokemonName>Pokémon</PokemonName>
+      <PokemonName>Articuno</PokemonName>
     </Container>
   );
 }
