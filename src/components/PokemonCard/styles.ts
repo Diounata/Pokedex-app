@@ -1,13 +1,16 @@
 import styled from 'styled-components/native';
 
+import { Dimensions } from 'react-native';
+
+const deviceWidth = Dimensions.get('window').width;
+
 const Container = styled.View`
-  width: 31%;
-  height: 120px;
+  width: ${(deviceWidth - 40) / 2}px;
+  height: 140px;
 
   justify-content: space-between;
 
-  margin: 10px 0;
-  margin-right: 5px;
+  margin-bottom: 10px;
 
   background-color: ${({ theme }) => theme.COLORS.WHITE};
   border: 1px solid #b8b8b8;
