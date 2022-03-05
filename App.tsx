@@ -6,6 +6,7 @@ import { ThemeProvider } from 'styled-components/native';
 import THEME from './src/theme';
 
 import { Home } from './src/screens/Home';
+import { Pokemon } from './src/screens/Pokemon';
 
 export default function App() {
   const [fontsLoaded] = useFonts({ Poppins_400Regular, Poppins_700Bold });
@@ -14,9 +15,9 @@ export default function App() {
 
   return (
     <ThemeProvider theme={THEME}>
-      <Home />
+      <Pokemon />
 
-      <StatusBar style="dark" />
+      <StatusBar style="light" backgroundColor="#6493EB" />
     </ThemeProvider>
   );
 }

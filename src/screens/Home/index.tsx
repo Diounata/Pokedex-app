@@ -1,9 +1,9 @@
 import { Container, PokemonCardsContainer } from './styles';
 import { ScrollView } from 'react-native';
 
-import { Header } from '../../components/Header';
-import { SearchInput } from '../../components/SearchInput';
-import { PokemonCard } from '../../components/PokemonCard';
+import { Header } from '../../components/Home/Header';
+import { SearchInput } from '../../components/Home/SearchInput';
+import { PokemonCard } from '../../components/Home/PokemonCard';
 
 export function Home() {
   return (
