@@ -4,8 +4,6 @@ const Container = styled.View`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-
-  margin: 24px;
 `;
 
 const TitleContainer = styled.View`
