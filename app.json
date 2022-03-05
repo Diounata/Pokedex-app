@@ -21,6 +21,11 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
+      },
+
+      "packagerOpts": {
+        "config": "metro.config.js",
+        "sourceExts": ["js", "jsx", "ts", "tsx", "svg"]
       }
     },
     "web": {

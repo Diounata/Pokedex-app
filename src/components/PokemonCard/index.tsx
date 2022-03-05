@@ -1,14 +1,17 @@
 import { Container, PokemonID, PokemonName } from './styles';
-import { Image } from 'react-native';
+
+import { SvgUri } from 'react-native-svg';
 
 export function PokemonCard() {
   return (
     <Container>
       <PokemonID>#144</PokemonID>
 
-      <Image
-        source={{ uri: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/144.png' }}
-        style={{ flex: 1, width: '100%', resizeMode: 'contain' }}
+      <SvgUri
+        uri="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/144.svg"
+        style={{ flex: 1, alignSelf: 'center' }}
+        width={90}
+        height={90}
       />
 
       <PokemonName>Articuno</PokemonName>
