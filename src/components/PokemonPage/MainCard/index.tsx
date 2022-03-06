@@ -1,6 +1,7 @@
 import { Container, AboutContainer, AboutTitle } from './styles';
 
 import { PokemonType } from '../PokemonType';
+import { About } from '../About';
 
 export function MainCard() {
   return (
@@ -10,6 +11,8 @@ export function MainCard() {
       <AboutContainer>
         <AboutTitle>About</AboutTitle>
       </AboutContainer>
+
+      <About />
     </Container>
   );
 }
