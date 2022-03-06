@@ -16,7 +16,7 @@ export function Pokemon() {
         <Header />
 
         <PokemonImgContainer>
-          <ArrowLeftSVG />
+          <ArrowLeftSVG style={{ transform: [{ rotate: '-180deg' }] }} />
 
           <SvgUri
             uri="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/7.svg"
