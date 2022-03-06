@@ -1,20 +1,22 @@
-import { Container, AboutContainer, AboutTitle } from './styles';
+import { Container, Title } from './styles';
 
 import { PokemonType } from '../PokemonType';
 import { About } from '../About';
 import { Description } from '../Description';
+import { BaseStats } from '../BaseStats';
 
 export function MainCard() {
   return (
     <Container>
       <PokemonType />
 
-      <AboutContainer>
-        <AboutTitle>About</AboutTitle>
-      </AboutContainer>
+      <Title>About</Title>
 
       <About />
       <Description />
+
+      <Title>Base Stats</Title>
+      <BaseStats />
     </Container>
   );
 }

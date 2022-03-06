@@ -1,24 +1,23 @@
 import styled from 'styled-components/native';
 
-const Container = styled.ScrollView`
-  flex: 1;
+const Container = styled.View`
+  /* flex: 1; */
 
-  margin: 12px;
-  margin-top: 0;
+  margin: 0 12px;
+  margin-bottom: 40px;
+  padding-bottom: 20px;
 
   background: #fff;
   border-radius: 8px;
 `;
 
-const AboutContainer = styled.View`
-  margin-top: 20px;
-`;
-
-const AboutTitle = styled.Text`
+const Title = styled.Text`
   font-family: ${({ theme }) => theme.FONTS.BOLD};
   font-size: 14px;
   color: ${({ theme }) => theme.COLORS.TYPE_WATER};
   text-align: center;
+
+  margin-top: 20px;
 `;
 
-export { Container, AboutContainer, AboutTitle };
+export { Container, Title };
