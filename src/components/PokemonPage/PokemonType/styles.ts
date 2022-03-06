@@ -4,7 +4,7 @@ const Container = styled.View`
   flex-direction: row;
   justify-content: center;
 
-  margin: 56px 0;
+  margin-top: 56px;
 `;
 
 const TypeContainer = styled.Text`

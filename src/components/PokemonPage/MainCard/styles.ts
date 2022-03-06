@@ -10,4 +10,15 @@ const Container = styled.ScrollView`
   border-radius: 8px;
 `;
 
-export { Container };
+const AboutContainer = styled.View`
+  margin-top: 20px;
+`;
+
+const AboutTitle = styled.Text`
+  font-family: ${({ theme }) => theme.FONTS.BOLD};
+  font-size: 14px;
+  color: ${({ theme }) => theme.COLORS.TYPE_WATER};
+  text-align: center;
+`;
+
+export { Container, AboutContainer, AboutTitle };
