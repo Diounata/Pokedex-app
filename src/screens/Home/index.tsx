@@ -5,6 +5,8 @@ import { Header } from '../../components/Home/Header';
 import { SearchInput } from '../../components/Home/SearchInput';
 import { PokemonCard } from '../../components/Home/PokemonCard';
 
+import { pokemonData } from './pokemonData';
+
 export function Home() {
   return (
     <Container>
@@ -13,12 +15,9 @@ export function Home() {
 
       <ScrollView style={{ marginTop: 16 }} showsVerticalScrollIndicator={false}>
         <PokemonCardsContainer>
-          <PokemonCard />
-          <PokemonCard />
-          <PokemonCard />
-          <PokemonCard />
-          <PokemonCard />
-          <PokemonCard />
+          {pokemonData.map(pokemon => (
+            <PokemonCard pokemon={pokemon} key={pokemon.id} />
+          ))}
         </PokemonCardsContainer>
       </ScrollView>
     </Container>

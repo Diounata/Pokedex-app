@@ -1,8 +1,8 @@
 import { Container, TitleContainer, Title, SortContainer } from './styles';
 import { Text } from 'react-native';
 
-import PokeballSVG from '../../assets/pokeball.svg';
-import ArrowDownSVG from '../../assets/arrow-down.svg';
+import PokeballSVG from '../../../assets/pokeball.svg';
+import ArrowDownSVG from '../../../assets/arrow-down.svg';
 
 export function Header() {
   return (

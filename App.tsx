@@ -15,7 +15,7 @@ export default function App() {
 
   return (
     <ThemeProvider theme={THEME}>
-      <Pokemon />
+      <Home />
 
       <StatusBar style="light" backgroundColor="#6493EB" />
     </ThemeProvider>

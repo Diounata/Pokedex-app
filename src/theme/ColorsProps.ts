@@ -1,0 +1,26 @@
+type ColorsProps =
+  | 'DARK_GRAY'
+  | 'MEDIUM_GRAY'
+  | 'LIGHT_GRAY'
+  | 'WHITE'
+  | 'BACKGROUND'
+  | 'TYPE_ROCK'
+  | 'TYPE_GHOST'
+  | 'TYPE_STEEL'
+  | 'TYPE_WATER'
+  | 'TYPE_GRASS'
+  | 'TYPE_PSYCHIC'
+  | 'TYPE_ICE'
+  | 'TYPE_DARK'
+  | 'TYPE_FAIRY'
+  | 'TYPE_NORMAL'
+  | 'TYPE_FIGHTING'
+  | 'TYPE_FLYING'
+  | 'TYPE_POISON'
+  | 'TYPE_GROUND'
+  | 'TYPE_BUG'
+  | 'TYPE_FIRE'
+  | 'TYPE_ELECTRIC'
+  | 'TYPE_DRAGON';
+
+export type { ColorsProps };

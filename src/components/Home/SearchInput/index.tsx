@@ -1,6 +1,6 @@
 import { Container, TitleContainer, Title } from './styles';
 
-import SearchSVG from '../../assets/search.svg';
+import SearchSVG from '../../../assets/search.svg';
 
 export function SearchInput() {
   return (
