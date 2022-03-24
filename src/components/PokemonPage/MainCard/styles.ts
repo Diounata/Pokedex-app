@@ -1,8 +1,8 @@
 import styled from 'styled-components/native';
 
-const Container = styled.View`
-  /* flex: 1; */
+import { PokemonTypeProps } from '../../../contexts/PokemonContext';
 
+const Container = styled.View`
   margin: 0 12px;
   margin-bottom: 40px;
   padding-bottom: 20px;
@@ -11,10 +11,10 @@ const Container = styled.View`
   border-radius: 8px;
 `;
 
-const Title = styled.Text`
+const Title = styled.Text<PokemonTypeProps>`
   font-family: ${({ theme }) => theme.FONTS.BOLD};
   font-size: 14px;
-  color: ${({ theme }) => theme.COLORS.TYPE_WATER};
+  color: ${({ pokemonTypeColor }) => pokemonTypeColor};
   text-align: center;
 
   margin-top: 20px;

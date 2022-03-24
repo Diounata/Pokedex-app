@@ -1,4 +1,5 @@
 import { Container, PokemonCardsContainer } from './styles';
+import { StatusBar } from 'expo-status-bar';
 import { ScrollView } from 'react-native';
 
 import { Header } from '../../components/Home/Header';
@@ -20,6 +21,8 @@ export function Home() {
           ))}
         </PokemonCardsContainer>
       </ScrollView>
+
+      <StatusBar style="dark" backgroundColor="#F7F7F7" />
     </Container>
   );
 }

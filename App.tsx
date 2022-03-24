@@ -1,4 +1,3 @@
-import { StatusBar } from 'expo-status-bar';
 import AppLoading from 'expo-app-loading';
 
 import { useFonts, Poppins_400Regular, Poppins_700Bold } from '@expo-google-fonts/poppins';
@@ -8,6 +7,8 @@ import THEME from './src/theme';
 import { Home } from './src/screens/Home';
 import { Pokemon } from './src/screens/Pokemon';
 
+import { PokemonProvider } from './src/contexts/PokemonContext';
+
 export default function App() {
   const [fontsLoaded] = useFonts({ Poppins_400Regular, Poppins_700Bold });
 
@@ -15,9 +16,9 @@ export default function App() {
 
   return (
     <ThemeProvider theme={THEME}>
-      <Home />
-
-      <StatusBar style="light" backgroundColor="#6493EB" />
+      <PokemonProvider>
+        <Pokemon />
+      </PokemonProvider>
     </ThemeProvider>
   );
 }

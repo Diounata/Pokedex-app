@@ -1,5 +1,7 @@
 import styled from 'styled-components/native';
 
+import { PokemonTypeProps } from '../../../contexts/PokemonContext';
+
 const Container = styled.View`
   margin: 0 20px;
 `;
@@ -9,7 +11,7 @@ const StatusContainer = styled.View`
   align-items: center;
 `;
 
-const Title = styled.Text`
+const Title = styled.Text<PokemonTypeProps>`
   width: 53px;
 
   margin-right: 8px;
@@ -22,7 +24,7 @@ const Title = styled.Text`
 
   font-family: ${({ theme }) => theme.FONTS.BOLD};
   font-size: 13px;
-  color: ${({ theme }) => theme.COLORS.TYPE_WATER};
+  color: ${({ pokemonTypeColor }) => pokemonTypeColor};
   text-align: right;
 `;
 
@@ -34,13 +36,13 @@ const Value = styled.Text`
   color: ${({ theme }) => theme.COLORS.DARK_GRAY};
 `;
 
-const ProgressBar = styled.View`
+const ProgressBar = styled.View<PokemonTypeProps>`
   flex: 1;
   flex-direction: row;
 
   height: 5px;
 
-  background-color: ${({ theme }) => theme.COLORS.TYPE_WATER};
+  background-color: ${({ pokemonTypeColor }) => pokemonTypeColor};
   border-radius: 4px;
 `;
 
@@ -57,4 +59,12 @@ const UnfilledProgressBar = styled.View`
   opacity: 0.7;
 `;
 
-export { Container, StatusContainer, Title, Value, ProgressBar, FilledProgressBar, UnfilledProgressBar };
+export {
+  Container,
+  StatusContainer,
+  Title,
+  Value,
+  ProgressBar,
+  FilledProgressBar,
+  UnfilledProgressBar,
+};

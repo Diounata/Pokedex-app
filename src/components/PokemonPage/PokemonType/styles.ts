@@ -1,5 +1,7 @@
 import styled from 'styled-components/native';
 
+import { PokemonTypeProps } from '../../../contexts/PokemonContext';
+
 const Container = styled.View`
   flex-direction: row;
   justify-content: center;
@@ -7,7 +9,7 @@ const Container = styled.View`
   margin-top: 56px;
 `;
 
-const TypeContainer = styled.Text`
+const TypeContainer = styled.Text<PokemonTypeProps>`
   padding: 2px 16px;
   padding-top: 4px;
 
@@ -17,7 +19,7 @@ const TypeContainer = styled.Text`
   color: #fff;
 
   border-radius: 20px;
-  background-color: ${({ theme }) => theme.COLORS.TYPE_WATER};
+  background-color: ${({ pokemonTypeColor }) => pokemonTypeColor};
 `;
 
 export { Container, TypeContainer };
