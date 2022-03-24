@@ -10,6 +10,7 @@ const Container = styled.View`
 `;
 
 const TypeContainer = styled.Text<PokemonTypeProps>`
+  margin: 0 8px;
   padding: 2px 16px;
   padding-top: 4px;
 
