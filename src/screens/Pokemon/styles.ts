@@ -3,11 +3,21 @@ import { getStatusBarHeight } from 'react-native-iphone-x-helper';
 
 import { PokemonTypeProps } from '../../contexts/PokemonContext';
 
+const LoadingContainer = styled.View`
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+`;
+
+const LoadingText = styled.Text`
+  font-size: 20px;
+`;
+
 const Container = styled.ScrollView<PokemonTypeProps>`
   flex: 1;
   padding-top: ${getStatusBarHeight()}px;
 
-  background-color: ${({ pokemonTypeColor }) => pokemonTypeColor};
+  background-color: ${({ typeColor }) => typeColor};
 `;
 
 const HeaderContainer = styled.View`
@@ -28,4 +38,4 @@ const PokemonImgContainer = styled.View`
   z-index: 2;
 `;
 
-export { Container, HeaderContainer, PokemonImgContainer };
+export { LoadingContainer, LoadingText, Container, HeaderContainer, PokemonImgContainer };

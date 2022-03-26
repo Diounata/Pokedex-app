@@ -14,7 +14,7 @@ const Container = styled.View`
 const Title = styled.Text<PokemonTypeProps>`
   font-family: ${({ theme }) => theme.FONTS.BOLD};
   font-size: 14px;
-  color: ${({ pokemonTypeColor }) => pokemonTypeColor};
+  color: ${({ typeColor }) => typeColor};
   text-align: center;
 
   margin-top: 20px;

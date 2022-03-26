@@ -3,11 +3,11 @@ import { Container, TypeContainer } from './styles';
 import { usePokemon } from '../../../contexts/PokemonContext';
 
 export function PokemonType() {
-  const { pokemonTypeColor } = usePokemon();
+  const { typeColor } = usePokemon();
 
   return (
     <Container>
-      <TypeContainer pokemonTypeColor={pokemonTypeColor}>Water</TypeContainer>
+      <TypeContainer typeColor={typeColor}>Water</TypeContainer>
     </Container>
   );
 }

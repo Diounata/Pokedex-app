@@ -8,18 +8,18 @@ import { BaseStats } from '../BaseStats';
 import { usePokemon } from '../../../contexts/PokemonContext';
 
 export function MainCard() {
-  const { pokemonTypeColor } = usePokemon();
+  const { typeColor } = usePokemon();
 
   return (
     <Container>
       <PokemonType />
 
-      <Title pokemonTypeColor={pokemonTypeColor}>About</Title>
+      <Title typeColor={typeColor}>About</Title>
 
       <About />
       <Description />
 
-      <Title pokemonTypeColor={pokemonTypeColor}>Base Stats</Title>
+      <Title typeColor={typeColor}>Base Stats</Title>
       <BaseStats />
     </Container>
   );

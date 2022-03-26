@@ -1,12 +1,23 @@
-import { createContext, ReactNode, useContext, useState } from 'react';
+import axios from 'axios';
+import { createContext, ReactNode, useContext, useEffect, useState } from 'react';
 
-import theme from '../theme';
-import { ColorsProps } from '../theme/ColorsProps';
+import PokemonDemo from '../data/PokemonDemo.json';
+import PokemonTypeColors from '../data/PokemonTypeColors';
+import { PokemonTypeValues } from '../@types/PokemonTypeValues';
 
 export const PokemonContext = createContext({} as ContextProps);
 
+type PokemonDemoProps = typeof PokemonDemo;
+interface PokemonProps extends PokemonDemoProps {
+  types: {
+    type: {
+      name: PokemonTypeValues;
+    };
+  }[];
+}
+
 export interface PokemonTypeProps {
-  pokemonTypeColor: string;
+  typeColor: string;
 }
 
 interface ChildrenProps {
@@ -14,15 +25,34 @@ interface ChildrenProps {
 }
 
 interface ContextProps {
-  pokemonTypeColor: string;
+  pokemon: PokemonProps;
+  typeColor: string;
+  isPokemonLoading: boolean;
 }
 
 export function PokemonProvider({ children }: ChildrenProps) {
-  const type: ColorsProps = 'TYPE_WATER';
+  const [pokemon, setPokemon] = useState({} as PokemonProps);
+  const [typeColor, setTypeColor] = useState<string>('#fff');
+  const [isPokemonLoading, setIsPokemonLoading] = useState(true);
 
-  const [pokemonTypeColor, setPokemonTypeColor] = useState<string>(theme.COLORS[type]);
+  useEffect(() => {
+    axios.get('https://pokeapi.co/api/v2/pokemon/7').then(res => {
+      const data: PokemonProps = res.data;
 
-  return <PokemonContext.Provider value={{ pokemonTypeColor }}>{children}</PokemonContext.Provider>;
+      const pokemonType: PokemonTypeValues = data.types[0].type.name;
+      const colorValue = PokemonTypeColors[pokemonType];
+
+      setPokemon(data);
+      setTypeColor(colorValue);
+      setIsPokemonLoading(false);
+    });
+  }, []);
+
+  return (
+    <PokemonContext.Provider value={{ pokemon, typeColor, isPokemonLoading }}>
+      {children}
+    </PokemonContext.Provider>
+  );
 }
 
 export function usePokemon() {

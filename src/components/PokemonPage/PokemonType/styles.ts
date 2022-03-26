@@ -20,7 +20,7 @@ const TypeContainer = styled.Text<PokemonTypeProps>`
   color: #fff;
 
   border-radius: 20px;
-  background-color: ${({ pokemonTypeColor }) => pokemonTypeColor};
+  background-color: ${({ typeColor }) => typeColor};
 `;
 
 export { Container, TypeContainer };

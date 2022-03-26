@@ -1,0 +1,51 @@
+{
+  "height": 7,
+  "id": 1,
+  "moves": [
+    {
+      "move": {
+        "name": "razor-wind"
+      }
+    },
+
+    {
+      "move": {
+        "name": "swords-dance"
+      }
+    }
+  ],
+  "name": "bulbasaur",
+  "stats": [
+    {
+      "base_stat": 45
+    },
+    {
+      "base_stat": 49
+    },
+    {
+      "base_stat": 49
+    },
+    {
+      "base_stat": 65
+    },
+    {
+      "base_stat": 65
+    },
+    {
+      "base_stat": 45
+    }
+  ],
+  "types": [
+    {
+      "type": {
+        "name": "grass"
+      }
+    },
+    {
+      "type": {
+        "name": "poison"
+      }
+    }
+  ],
+  "weight": 69
+}

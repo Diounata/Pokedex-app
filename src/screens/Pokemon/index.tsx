@@ -1,7 +1,13 @@
-import { Container, HeaderContainer, PokemonImgContainer } from './styles';
+import {
+  Container,
+  HeaderContainer,
+  LoadingContainer,
+  LoadingText,
+  PokemonImgContainer,
+} from './styles';
+import { SvgUri } from 'react-native-svg';
 import { StatusBar } from 'expo-status-bar';
 import { Image } from 'react-native';
-import { SvgUri } from 'react-native-svg';
 
 import { Header } from '../../components/PokemonPage/Header';
 import { MainCard } from '../../components/PokemonPage/MainCard';
@@ -12,11 +18,20 @@ import ArrowLeftSVG from '../../assets/arrow-right.svg';
 import { usePokemon } from '../../contexts/PokemonContext';
 
 export function Pokemon() {
-  const { pokemonTypeColor } = usePokemon();
+  const { typeColor, isPokemonLoading } = usePokemon();
+
+  if (isPokemonLoading)
+    return (
+      <LoadingContainer>
+        <LoadingText>Loading...</LoadingText>
+
+        <StatusBar style="dark" />
+      </LoadingContainer>
+    );
 
   return (
     <>
-      <Container pokemonTypeColor={pokemonTypeColor} showsVerticalScrollIndicator={false}>
+      <Container typeColor={typeColor} showsVerticalScrollIndicator={false}>
         <HeaderContainer>
           <Image source={PokeballPNG} style={{ position: 'absolute', right: 0 }} />
           <Header />
@@ -37,7 +52,7 @@ export function Pokemon() {
         <MainCard />
       </Container>
 
-      <StatusBar style="light" backgroundColor={pokemonTypeColor} />
+      <StatusBar style="light" backgroundColor="transparent" />
     </>
   );
 }

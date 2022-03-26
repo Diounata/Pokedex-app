@@ -24,7 +24,7 @@ const Title = styled.Text<PokemonTypeProps>`
 
   font-family: ${({ theme }) => theme.FONTS.BOLD};
   font-size: 13px;
-  color: ${({ pokemonTypeColor }) => pokemonTypeColor};
+  color: ${({ typeColor }) => typeColor};
   text-align: right;
 `;
 
@@ -42,7 +42,7 @@ const ProgressBar = styled.View<PokemonTypeProps>`
 
   height: 5px;
 
-  background-color: ${({ pokemonTypeColor }) => pokemonTypeColor};
+  background-color: ${({ typeColor }) => typeColor};
   border-radius: 4px;
 `;
 

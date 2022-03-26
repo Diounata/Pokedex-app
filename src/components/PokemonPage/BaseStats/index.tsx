@@ -15,10 +15,10 @@ interface ProgressBarProps {
 }
 
 function ProgressBarContainer({ percentage }: ProgressBarProps) {
-  const { pokemonTypeColor } = usePokemon();
+  const { typeColor } = usePokemon();
 
   return (
-    <ProgressBar pokemonTypeColor={pokemonTypeColor}>
+    <ProgressBar typeColor={typeColor}>
       <FilledProgressBar percentage={percentage} />
       <UnfilledProgressBar />
     </ProgressBar>
@@ -26,42 +26,42 @@ function ProgressBarContainer({ percentage }: ProgressBarProps) {
 }
 
 export function BaseStats() {
-  const { pokemonTypeColor } = usePokemon();
+  const { typeColor } = usePokemon();
 
   return (
     <Container>
       <StatusContainer>
-        <Title pokemonTypeColor={pokemonTypeColor}>HP</Title>
+        <Title typeColor={typeColor}>HP</Title>
         <Value>044</Value>
         <ProgressBarContainer percentage={44} />
       </StatusContainer>
 
       <StatusContainer>
-        <Title pokemonTypeColor={pokemonTypeColor}>ATK</Title>
+        <Title typeColor={typeColor}>ATK</Title>
         <Value>048</Value>
         <ProgressBarContainer percentage={48} />
       </StatusContainer>
 
       <StatusContainer>
-        <Title pokemonTypeColor={pokemonTypeColor}>DEF</Title>
+        <Title typeColor={typeColor}>DEF</Title>
         <Value>065</Value>
         <ProgressBarContainer percentage={65} />
       </StatusContainer>
 
       <StatusContainer>
-        <Title pokemonTypeColor={pokemonTypeColor}>SATAK</Title>
+        <Title typeColor={typeColor}>SATAK</Title>
         <Value>050</Value>
         <ProgressBarContainer percentage={50} />
       </StatusContainer>
 
       <StatusContainer>
-        <Title pokemonTypeColor={pokemonTypeColor}>SDEF</Title>
+        <Title typeColor={typeColor}>SDEF</Title>
         <Value>064</Value>
         <ProgressBarContainer percentage={64} />
       </StatusContainer>
 
       <StatusContainer>
-        <Title pokemonTypeColor={pokemonTypeColor}>SPD</Title>
+        <Title typeColor={typeColor}>SPD</Title>
         <Value>043</Value>
         <ProgressBarContainer percentage={43} />
       </StatusContainer>
