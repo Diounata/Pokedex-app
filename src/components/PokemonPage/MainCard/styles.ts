@@ -4,7 +4,7 @@ import { PokemonTypeProps } from '../../../contexts/PokemonContext';
 
 const Container = styled.View`
   margin: 0 12px;
-  margin-bottom: 40px;
+  margin-bottom: 36px;
   padding-bottom: 20px;
 
   background: #fff;

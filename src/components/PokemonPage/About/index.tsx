@@ -1,16 +1,34 @@
-import { Container, DataContainer, MiddleDataContainer, DataField, MovesText, Data, Title } from './styles';
+import {
+  Container,
+  DataContainer,
+  MiddleDataContainer,
+  DataField,
+  MovesText,
+  Data,
+  Title,
+} from './styles';
 import { View } from 'react-native';
 
 import BalanceSVG from '../../../assets/balance.svg';
 import RulerSVG from '../../../assets/ruler.svg';
 
+import { convert } from '../../../utils/ConvertUnit';
+import { usePokemon } from '../../../contexts/PokemonContext';
+
 export function About() {
+  const { pokemon, uppercaseFirstLetter } = usePokemon();
+
+  const height = convert.decimeterToMeter(pokemon.height);
+  const weight = convert.hectogramToKilogram(pokemon.weight);
+
+  const [move1, move2] = pokemon.moves.map(move => move.move.name);
+
   return (
     <Container>
       <DataContainer>
         <DataField>
           <BalanceSVG />
-          <Data>9.0 kg</Data>
+          <Data>{weight} kg</Data>
         </DataField>
 
         <Title>Weight</Title>
@@ -19,7 +37,7 @@ export function About() {
       <MiddleDataContainer>
         <DataField>
           <RulerSVG />
-          <Data>0.5 m</Data>
+          <Data>{height} m</Data>
         </DataField>
 
         <Title>Height</Title>
@@ -27,8 +45,8 @@ export function About() {
 
       <DataContainer>
         <View>
-          <MovesText>Torrent</MovesText>
-          <MovesText>Rain-Dish</MovesText>
+          <MovesText>{uppercaseFirstLetter(move1)}</MovesText>
+          <MovesText>{uppercaseFirstLetter(move2)}</MovesText>
         </View>
 
         <Title>Moves</Title>

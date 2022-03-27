@@ -47,7 +47,7 @@ const ProgressBar = styled.View<PokemonTypeProps>`
 `;
 
 const FilledProgressBar = styled.View<{ percentage: number }>`
-  width: ${props => props.percentage}%;
+  width: ${({ percentage }) => percentage}px;
   height: 5px;
 `;
 

@@ -10,6 +10,7 @@ export const PokemonContext = createContext({} as ContextProps);
 type PokemonDemoProps = typeof PokemonDemo;
 interface PokemonProps extends PokemonDemoProps {
   types: {
+    slot: number;
     type: {
       name: PokemonTypeValues;
     };
@@ -28,6 +29,8 @@ interface ContextProps {
   pokemon: PokemonProps;
   typeColor: string;
   isPokemonLoading: boolean;
+
+  uppercaseFirstLetter(str: string): string;
 }
 
 export function PokemonProvider({ children }: ChildrenProps) {
@@ -35,8 +38,12 @@ export function PokemonProvider({ children }: ChildrenProps) {
   const [typeColor, setTypeColor] = useState<string>('#fff');
   const [isPokemonLoading, setIsPokemonLoading] = useState(true);
 
+  function uppercaseFirstLetter(str: string): string {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  }
+
   useEffect(() => {
-    axios.get('https://pokeapi.co/api/v2/pokemon/7').then(res => {
+    axios.get('https://pokeapi.co/api/v2/pokemon/147').then(res => {
       const data: PokemonProps = res.data;
 
       const pokemonType: PokemonTypeValues = data.types[0].type.name;
@@ -49,7 +56,14 @@ export function PokemonProvider({ children }: ChildrenProps) {
   }, []);
 
   return (
-    <PokemonContext.Provider value={{ pokemon, typeColor, isPokemonLoading }}>
+    <PokemonContext.Provider
+      value={{
+        pokemon,
+        typeColor,
+        isPokemonLoading,
+        uppercaseFirstLetter,
+      }}
+    >
       {children}
     </PokemonContext.Provider>
   );

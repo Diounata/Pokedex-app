@@ -18,7 +18,7 @@ import ArrowLeftSVG from '../../assets/arrow-right.svg';
 import { usePokemon } from '../../contexts/PokemonContext';
 
 export function Pokemon() {
-  const { typeColor, isPokemonLoading } = usePokemon();
+  const { pokemon, typeColor, isPokemonLoading } = usePokemon();
 
   if (isPokemonLoading)
     return (
@@ -40,7 +40,7 @@ export function Pokemon() {
             <ArrowLeftSVG style={{ transform: [{ rotate: '-180deg' }] }} />
 
             <SvgUri
-              uri="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/7.svg"
+              uri={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${pokemon.id}.svg`}
               width={150}
               height={150}
             />

@@ -12,11 +12,10 @@ import { usePokemon } from '../../../contexts/PokemonContext';
 
 interface ProgressBarProps {
   percentage: number;
+  typeColor: string;
 }
 
-function ProgressBarContainer({ percentage }: ProgressBarProps) {
-  const { typeColor } = usePokemon();
-
+function ProgressBarContainer({ percentage, typeColor }: ProgressBarProps) {
   return (
     <ProgressBar typeColor={typeColor}>
       <FilledProgressBar percentage={percentage} />
@@ -26,45 +25,23 @@ function ProgressBarContainer({ percentage }: ProgressBarProps) {
 }
 
 export function BaseStats() {
-  const { typeColor } = usePokemon();
+  const { pokemon, typeColor } = usePokemon();
+
+  const BASESTATS_NAME = ['HP', 'ATK', 'DEF', 'SATAK', 'SDEF', 'SPD'];
+
+  const showBaseStat = (stat: number) => String(stat).padStart(3, '0');
 
   return (
     <Container>
-      <StatusContainer>
-        <Title typeColor={typeColor}>HP</Title>
-        <Value>044</Value>
-        <ProgressBarContainer percentage={44} />
-      </StatusContainer>
+      {pokemon.stats.map(({ base_stat }, key) => (
+        <StatusContainer key={key}>
+          <Title typeColor={typeColor}>{BASESTATS_NAME[key]}</Title>
 
-      <StatusContainer>
-        <Title typeColor={typeColor}>ATK</Title>
-        <Value>048</Value>
-        <ProgressBarContainer percentage={48} />
-      </StatusContainer>
+          <Value>{showBaseStat(base_stat)}</Value>
 
-      <StatusContainer>
-        <Title typeColor={typeColor}>DEF</Title>
-        <Value>065</Value>
-        <ProgressBarContainer percentage={65} />
-      </StatusContainer>
-
-      <StatusContainer>
-        <Title typeColor={typeColor}>SATAK</Title>
-        <Value>050</Value>
-        <ProgressBarContainer percentage={50} />
-      </StatusContainer>
-
-      <StatusContainer>
-        <Title typeColor={typeColor}>SDEF</Title>
-        <Value>064</Value>
-        <ProgressBarContainer percentage={64} />
-      </StatusContainer>
-
-      <StatusContainer>
-        <Title typeColor={typeColor}>SPD</Title>
-        <Value>043</Value>
-        <ProgressBarContainer percentage={43} />
-      </StatusContainer>
+          <ProgressBarContainer percentage={base_stat} typeColor={typeColor} />
+        </StatusContainer>
+      ))}
     </Container>
   );
 }
