@@ -43,7 +43,7 @@ export function PokemonProvider({ children }: ChildrenProps) {
   }
 
   useEffect(() => {
-    axios.get('https://pokeapi.co/api/v2/pokemon/147').then(res => {
+    axios.get<PokemonProps>('https://pokeapi.co/api/v2/pokemon/147').then(res => {
       const data: PokemonProps = res.data;
 
       const pokemonType: PokemonTypeValues = data.types[0].type.name;
