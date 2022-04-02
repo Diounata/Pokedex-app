@@ -4,8 +4,8 @@ import { TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 import { SvgUri } from 'react-native-svg';
-import { ColorsProps } from '../../../theme/ColorsProps';
-import { StackProps } from '../../routes/types';
+import { ColorsProps } from '../../../../theme/ColorsProps';
+import { StackProps } from '../../../routes/types';
 
 interface Props {
   pokemon: {

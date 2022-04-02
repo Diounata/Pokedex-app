@@ -9,8 +9,8 @@ import { SvgUri } from 'react-native-svg';
 import { StatusBar } from 'expo-status-bar';
 import { Image } from 'react-native';
 
-import { Header } from '../../components/PokemonPage/Header';
-import { MainCard } from '../../components/PokemonPage/MainCard';
+import { Header } from '../../components/screens/Pokemon/Header';
+import { MainCard } from '../../components/screens/Pokemon/MainCard';
 
 import PokeballPNG from '../../assets/pokeball-background.png';
 import ArrowLeftSVG from '../../assets/arrow-right.svg';

@@ -1,9 +1,9 @@
 import { Container, TypeContainer } from './styles';
 
-import PokemonTypeColors from '../../../data/PokemonTypeColors';
+import PokemonTypeColors from '../../../../data/PokemonTypeColors';
 
-import { usePokemon } from '../../../contexts/PokemonContext';
-import { PokemonTypeValues } from '../../../@types/PokemonTypeValues';
+import { usePokemon } from '../../../../contexts/PokemonContext';
+import { PokemonTypeValues } from '../../../../@types/PokemonTypeValues';
 
 export function PokemonType() {
   const { pokemon, uppercaseFirstLetter } = usePokemon();

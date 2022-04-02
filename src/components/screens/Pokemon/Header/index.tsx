@@ -1,11 +1,11 @@
 import { Container, TitleContainer, Title, IDText } from './styles';
 
-import ArrowLeftSVG from '../../../assets/arrow-left.svg';
+import ArrowLeftSVG from '../../../../assets/arrow-left.svg';
 
-import { usePokemon } from '../../../contexts/PokemonContext';
+import { usePokemon } from '../../../../contexts/PokemonContext';
 import { useNavigation } from '@react-navigation/native';
 
-import { StackProps } from '../../routes/types';
+import { StackProps } from '../../../routes/types';
 import { TouchableOpacity } from 'react-native';
 
 export function Header() {

@@ -8,7 +8,7 @@ import {
   UnfilledProgressBar,
 } from './styles';
 
-import { usePokemon } from '../../../contexts/PokemonContext';
+import { usePokemon } from '../../../../contexts/PokemonContext';
 
 interface ProgressBarProps {
   percentage: number;

@@ -9,11 +9,11 @@ import {
 } from './styles';
 import { View } from 'react-native';
 
-import BalanceSVG from '../../../assets/balance.svg';
-import RulerSVG from '../../../assets/ruler.svg';
+import BalanceSVG from '../../../../assets/balance.svg';
+import RulerSVG from '../../../../assets/ruler.svg';
 
-import { convert } from '../../../utils/ConvertUnit';
-import { usePokemon } from '../../../contexts/PokemonContext';
+import { convert } from '../../../../utils/ConvertUnit';
+import { usePokemon } from '../../../../contexts/PokemonContext';
 
 export function About() {
   const { pokemon, uppercaseFirstLetter } = usePokemon();
