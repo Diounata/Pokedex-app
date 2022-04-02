@@ -23,7 +23,7 @@ export function Pokemon() {
   if (isPokemonLoading)
     return (
       <LoadingContainer>
-        <LoadingText>Loading...</LoadingText>
+        <LoadingText>Loading data...</LoadingText>
 
         <StatusBar style="dark" />
       </LoadingContainer>

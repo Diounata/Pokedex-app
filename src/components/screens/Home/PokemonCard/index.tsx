@@ -17,7 +17,7 @@ export function PokemonCard({ pokemon }: Props) {
 
   return (
     <Container TYPE={type}>
-      <NavigationButton screen="PokemonScreen">
+      <NavigationButton screen="PokemonScreen" pokemonId={id}>
         <PokemonID TYPE={type}>#{String(id).padStart(3, '0')}</PokemonID>
 
         <SvgUri

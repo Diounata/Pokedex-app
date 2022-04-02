@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { createContext, ReactNode, useContext, useEffect, useState } from 'react';
+import { createContext, ReactNode, useContext, useState } from 'react';
 
 import PokemonDemo from '../data/PokemonDemo.json';
 import PokemonTypeColors from '../data/PokemonTypeColors';
@@ -30,6 +30,8 @@ interface ContextProps {
   typeColor: string;
   isPokemonLoading: boolean;
 
+  updatePokemonData(id: number): void;
+  updatePokemonLoading(value: boolean): void;
   uppercaseFirstLetter(str: string): string;
 }
 
@@ -38,12 +40,8 @@ export function PokemonProvider({ children }: ChildrenProps) {
   const [typeColor, setTypeColor] = useState<string>('#fff');
   const [isPokemonLoading, setIsPokemonLoading] = useState(true);
 
-  function uppercaseFirstLetter(str: string): string {
-    return str.charAt(0).toUpperCase() + str.slice(1);
-  }
-
-  useEffect(() => {
-    axios.get<PokemonProps>('https://pokeapi.co/api/v2/pokemon/147').then(res => {
+  function updatePokemonData(id: number): void {
+    axios.get<PokemonProps>(`https://pokeapi.co/api/v2/pokemon/${id}`).then(res => {
       const data: PokemonProps = res.data;
 
       const pokemonType: PokemonTypeValues = data.types[0].type.name;
@@ -53,7 +51,15 @@ export function PokemonProvider({ children }: ChildrenProps) {
       setTypeColor(colorValue);
       setIsPokemonLoading(false);
     });
-  }, []);
+  }
+
+  function updatePokemonLoading(value: boolean): void {
+    setIsPokemonLoading(value);
+  }
+
+  function uppercaseFirstLetter(str: string): string {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  }
 
   return (
     <PokemonContext.Provider
@@ -61,6 +67,8 @@ export function PokemonProvider({ children }: ChildrenProps) {
         pokemon,
         typeColor,
         isPokemonLoading,
+        updatePokemonData,
+        updatePokemonLoading,
         uppercaseFirstLetter,
       }}
     >
