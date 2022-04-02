@@ -1,11 +1,8 @@
 import { Container, PokemonID, PokemonName } from './styles';
-import { TouchableOpacity } from 'react-native';
-
-import { useNavigation } from '@react-navigation/native';
+import { NavigationButton } from '../../../NavigationButton';
 
 import { SvgUri } from 'react-native-svg';
 import { ColorsProps } from '../../../../theme/ColorsProps';
-import { StackProps } from '../../../routes/types';
 
 interface Props {
   pokemon: {
@@ -18,11 +15,9 @@ interface Props {
 export function PokemonCard({ pokemon }: Props) {
   const { id, name, type } = pokemon;
 
-  const navigation = useNavigation<StackProps>();
-
   return (
     <Container TYPE={type}>
-      <TouchableOpacity activeOpacity={0.7} onPress={() => navigation.navigate('PokemonScreen')}>
+      <NavigationButton screen="PokemonScreen">
         <PokemonID TYPE={type}>#{String(id).padStart(3, '0')}</PokemonID>
 
         <SvgUri
@@ -33,7 +28,7 @@ export function PokemonCard({ pokemon }: Props) {
         />
 
         <PokemonName TYPE={type}>{name}</PokemonName>
-      </TouchableOpacity>
+      </NavigationButton>
     </Container>
   );
 }
