@@ -1,6 +1,5 @@
 import { Container, PokemonCardsContainer } from './styles';
 import { StatusBar } from 'expo-status-bar';
-import { ScrollView } from 'react-native';
 
 import { Header } from '../../components/screens/Home/Header';
 import { SearchInput } from '../../components/screens/Home/SearchInput';

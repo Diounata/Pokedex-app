@@ -29,6 +29,7 @@ const PokemonID = styled.Text<{ TYPE: ColorsProps }>`
 const PokemonName = styled.Text<{ TYPE: ColorsProps }>`
   width: 100%;
 
+  margin-top: 1px;
   padding: 4px 8px;
 
   background-color: ${({ theme, TYPE }) => theme.COLORS[TYPE]};
