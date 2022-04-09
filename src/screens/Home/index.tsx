@@ -10,19 +10,17 @@ import { pokemonData } from './pokemonData';
 
 export function Home() {
   return (
-    <Container>
+    <Container showsVerticalScrollIndicator={false}>
       <Header />
       <SearchInput />
 
-      <ScrollView style={{ marginTop: 16 }} showsVerticalScrollIndicator={false}>
-        <PokemonCardsContainer>
-          {pokemonData.map(pokemon => (
-            <PokemonCard pokemon={pokemon} key={pokemon.id} />
-          ))}
-        </PokemonCardsContainer>
-      </ScrollView>
+      <PokemonCardsContainer>
+        {pokemonData.map(pokemon => (
+          <PokemonCard pokemon={pokemon} key={pokemon.id} />
+        ))}
+      </PokemonCardsContainer>
 
-      <StatusBar style="dark" backgroundColor="#F7F7F7" />
+      <StatusBar style="dark" backgroundColor="transparent" />
     </Container>
   );
 }
