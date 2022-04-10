@@ -16,7 +16,7 @@ const Title = styled.Text`
   font-size: 24px;
 `;
 
-const SortContainer = styled.View`
+const SortContainer = styled.TouchableOpacity`
   flex-direction: row;
   align-items: center;
 `;
