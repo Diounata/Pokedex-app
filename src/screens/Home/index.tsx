@@ -6,20 +6,22 @@ import { SearchInput } from '../../components/screens/Home/SearchInput';
 import { PokemonCard } from '../../components/screens/Home/PokemonCard';
 import { Page } from '../../components/screens/Home/Page';
 
-import { pokemonData } from './pokemonData';
+import { usePokemonPage } from './usePokemonPage';
 
 export function Home() {
+  const { page, currentPageData, changePage } = usePokemonPage();
+
   return (
     <Container showsVerticalScrollIndicator={false}>
       <Header />
       <SearchInput />
 
       <PokemonCardsContainer>
-        {pokemonData.map(pokemon => (
+        {currentPageData.map(pokemon => (
           <PokemonCard pokemon={pokemon} key={pokemon.id} />
         ))}
 
-        <Page />
+        <Page page={page} changePage={changePage} />
       </PokemonCardsContainer>
 
       <StatusBar style="dark" backgroundColor="transparent" />
