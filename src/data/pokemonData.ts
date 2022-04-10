@@ -1,4 +1,4 @@
-import { ColorsProps } from '../../theme/ColorsProps';
+import { ColorsProps } from '../theme/ColorsProps';
 
 interface PokemonProps {
   id: number;
