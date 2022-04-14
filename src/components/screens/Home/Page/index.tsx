@@ -1,7 +1,7 @@
-import { PageContainer, Text } from './styles';
-import { TouchableOpacity } from 'react-native';
+import { PageContainer, Button, Text } from './styles';
 
 import ArrowRightSVG from '../../../../assets/arrow-right-page.svg';
+
 import { usePokemonCard } from '../../../../contexts/PokemonCardContext';
 
 const ArrowLeftSVG: typeof ArrowRightSVG = props => (
@@ -15,15 +15,17 @@ export function Page() {
     <>
       {page !== -1 && (
         <PageContainer>
-          <TouchableOpacity onPress={() => changePage('back')}>
+          <Button onPress={() => changePage('back')}>
             <ArrowLeftSVG opacity={page === 1 ? 0.2 : 1} />
-          </TouchableOpacity>
+            <Text>Back</Text>
+          </Button>
 
           <Text>Page {page}</Text>
 
-          <TouchableOpacity onPress={() => changePage('forward')}>
+          <Button onPress={() => changePage('forward')}>
+            <Text>Next</Text>
             <ArrowRightSVG />
-          </TouchableOpacity>
+          </Button>
         </PageContainer>
       )}
     </>
