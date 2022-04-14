@@ -9,16 +9,10 @@ const Container = styled.View`
   border-radius: 8px;
 `;
 
-const TitleContainer = styled.View`
+const Input = styled.TextInput`
   flex-direction: row;
   align-items: center;
   justify-content: center;
 `;
 
-const Title = styled.Text`
-  color: ${({ theme }) => theme.COLORS.MEDIUM_GRAY};
-  font-family: ${({ theme }) => theme.FONTS.REGULAR};
-  font-size: 12px;
-`;
-
-export { Container, TitleContainer, Title };
+export { Container, Input };

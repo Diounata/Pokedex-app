@@ -12,16 +12,20 @@ export function Page() {
   const { page, changePage } = usePokemonCard();
 
   return (
-    <PageContainer>
-      <TouchableOpacity onPress={() => changePage('back')}>
-        <ArrowLeftSVG opacity={page === 1 ? 0.2 : 1} />
-      </TouchableOpacity>
+    <>
+      {page !== -1 && (
+        <PageContainer>
+          <TouchableOpacity onPress={() => changePage('back')}>
+            <ArrowLeftSVG opacity={page === 1 ? 0.2 : 1} />
+          </TouchableOpacity>
 
-      <Text>Page {page}</Text>
+          <Text>Page {page}</Text>
 
-      <TouchableOpacity onPress={() => changePage('forward')}>
-        <ArrowRightSVG />
-      </TouchableOpacity>
-    </PageContainer>
+          <TouchableOpacity onPress={() => changePage('forward')}>
+            <ArrowRightSVG />
+          </TouchableOpacity>
+        </PageContainer>
+      )}
+    </>
   );
 }

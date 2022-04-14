@@ -1,15 +1,18 @@
-import { Container, TitleContainer, Title } from './styles';
+import { Container, Input } from './styles';
 
-import SearchSVG from '../../../../assets/search.svg';
+import { usePokemonCard } from '../../../../contexts/PokemonCardContext';
 
 export function SearchInput() {
+  const { inputFilter, updateInputFilter } = usePokemonCard();
+
   return (
     <Container>
-      <TitleContainer>
-        <SearchSVG width={12} height={12} style={{ marginRight: 10 }} />
-
-        <Title>Search</Title>
-      </TitleContainer>
+      <Input
+        placeholder="Search"
+        autoCapitalize="sentences"
+        value={inputFilter}
+        onChangeText={updateInputFilter}
+      />
     </Container>
   );
 }
