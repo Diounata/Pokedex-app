@@ -21,7 +21,7 @@ export function Home() {
         {!isPokemonFound
           ? (
             <Text>
-              Pokémon <Text style={{ fontStyle: 'italic' }}>{inputFilter}</Text> not found ;(
+              Pokémon <Text style={{ fontStyle: 'italic' }}>{inputFilter}</Text> wasn't found ;(
             </Text>
           )
           : currentPageData.map(pokemon => <PokemonCard pokemon={pokemon} key={pokemon.id} />)
