@@ -1,7 +1,8 @@
 import { Container, PokemonID, PokemonName } from './styles';
-import { NavigationButton } from '../../../NavigationButton';
 
-import { SvgUri } from 'react-native-svg';
+import { NavigationButton } from '../../../NavigationButton';
+import { PokemonImage } from '../../../PokemonImage';
+
 import { ColorsProps } from '../../../../theme/ColorsProps';
 
 interface Props {
@@ -20,12 +21,7 @@ export function PokemonCard({ pokemon }: Props) {
       <NavigationButton screen="PokemonScreen" pokemonId={id}>
         <PokemonID TYPE={type}>#{String(id).padStart(3, '0')}</PokemonID>
 
-        <SvgUri
-          uri={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${id}.svg`}
-          style={{ flex: 1, alignSelf: 'center' }}
-          width={90}
-          height={90}
-        />
+        <PokemonImage id={id} />
 
         <PokemonName TYPE={type}>{name}</PokemonName>
       </NavigationButton>
