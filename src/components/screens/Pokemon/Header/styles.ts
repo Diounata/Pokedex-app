@@ -4,6 +4,7 @@ const Container = styled.View`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
 `;
 
 const TitleContainer = styled.View`
@@ -11,6 +12,7 @@ const TitleContainer = styled.View`
   align-items: center;
 
   margin-top: 3px;
+  margin-right: 10px;
 `;
 
 const Title = styled.Text`
