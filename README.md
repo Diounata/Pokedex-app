@@ -12,6 +12,10 @@
 <a href='#dart-overview'>Overview</a> &nbsp; | &nbsp; <a href='#books-technologies'>Technologies</a> &nbsp; | &nbsp; <a href='#%EF%B8%8F-layout'>Layout</a> &nbsp; | &nbsp; <a href='#gear-how-to-use'>How to use</a> &nbsp; | &nbsp; <a href='#balance_scale-license'>License</a> 
 </p>
 
+<p align='center'>
+<img src="https://github.com/Diounata/Pokedex-app/blob/main/.github/app-preview.png" alt="App preview" />
+</p>
+
 ## :dart: Overview
 
 <p>This app is a simple Pokédex API consumer in which I decided to make to put my React Native knowledge in practice.</p>
