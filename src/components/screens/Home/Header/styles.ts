@@ -21,4 +21,8 @@ const SortContainer = styled.TouchableOpacity`
   align-items: center;
 `;
 
-export { Container, TitleContainer, Title, SortContainer };
+const HashText = styled.Text`
+  font-family: ${({ theme }) => theme.FONTS.REGULAR};
+`;
+
+export { Container, TitleContainer, Title, SortContainer, HashText };

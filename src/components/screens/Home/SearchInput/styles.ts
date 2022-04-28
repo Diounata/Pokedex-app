@@ -19,6 +19,8 @@ const Input = styled.TextInput`
   justify-content: center;
 
   margin-left: 10px;
+
+  font-family: ${({ theme }) => theme.FONTS.REGULAR};
 `;
 
 export { Container, Input };

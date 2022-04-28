@@ -1,5 +1,4 @@
-import { Container, TitleContainer, Title, SortContainer } from './styles';
-import { Text } from 'react-native';
+import { Container, TitleContainer, Title, SortContainer, HashText } from './styles';
 
 import PokeballSVG from '../../../../assets/pokeball.svg';
 import ArrowDownSVG from '../../../../assets/arrow-down.svg';
@@ -18,7 +17,7 @@ export function Header() {
       </TitleContainer>
 
       <SortContainer onPress={changeOrder}>
-        <Text style={{ marginRight: 5 }}>#</Text>
+        <HashText style={{ marginRight: 5 }}>#</HashText>
 
         <ArrowDownSVG
           width={24}
