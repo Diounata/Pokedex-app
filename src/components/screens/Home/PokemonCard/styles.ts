@@ -1,7 +1,6 @@
 import styled from 'styled-components/native';
-import { ColorsProps } from '../../../../theme/ColorsProps';
-
 import { Dimensions } from 'react-native';
+import { ColorsProps } from '../../../../theme/ColorsProps';
 
 const deviceWidth = Dimensions.get('window').width;
 

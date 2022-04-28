@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
 
-import { PokemonTypeProps } from '../../../contexts/PokemonContext';
+import { PokemonTypeProps } from '../../../../contexts/PokemonContext';
 
 const Container = styled.View`
   margin: 0 20px;
