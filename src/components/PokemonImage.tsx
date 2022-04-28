@@ -5,12 +5,14 @@ interface Props {
   id: number;
 }
 
+const baseURL = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon';
+
 export function PokemonImage({ id }: Props) {
   return (
     <>
       {id < 650 ? (
         <SvgUri
-          uri={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${id}.svg`}
+          uri={`${baseURL}/dream-world/${id}.svg`}
           style={{ flex: 1, alignSelf: 'center' }}
           width={90}
           height={90}
@@ -18,7 +20,7 @@ export function PokemonImage({ id }: Props) {
       ) : (
         <Image
           source={{
-            uri: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`,
+            uri: `${baseURL}/official-artwork/${id}.png`,
           }}
           style={{
             width: 90,
