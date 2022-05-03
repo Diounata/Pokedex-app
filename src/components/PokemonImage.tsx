@@ -5,7 +5,7 @@ interface Props {
   id: number;
 }
 
-const baseURL = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon';
+const baseURL = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other';
 
 export function PokemonImage({ id }: Props) {
   return (
