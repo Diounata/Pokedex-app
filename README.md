@@ -13,13 +13,15 @@
 </p>
 
 <p align='center'>
-<img src="https://github.com/Diounata/Pokedex-app/blob/main/.github/home.png" width="300px" alt="Home screen" />
-<img src="https://github.com/Diounata/Pokedex-app/blob/main/.github/pokemon.png" width="300px" alt="Pokemon screen" />
+<img src="https://github.com/Diounata/Pokedex-app/blob/main/.github/home.png" width="280px" alt="Home screen" />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+<img src="https://github.com/Diounata/Pokedex-app/blob/main/.github/pokemon.png" width="280px" alt="Pokemon screen" />
 </p>
 
 ## :dart: Overview
 
-<p>This app is a simple Pokédex API consumer in which I decided to make to put my React Native knowledge in practice.</p>
+<p>This app is a simple Pokédex API consumer in which I developed to put my React Native knowledge in practice.</p>
+<p>API endpoint used to consume Pokémon's data: <a href="https://pokeapi.co/">PokéAPI</a></p>
 
 ## :books: Technologies
 
@@ -30,6 +32,11 @@ This project was made using the following techs:
 - [React Native](https://reactnative.dev/)
 - [Styled-components](https://styled-components.com/)
 - [Typescript](https://www.typescriptlang.org/)
+
+## :performing_arts: Features
+
+- Filter Pokémon by name
+- Toggle sort order
 
 ## 🖼️ Layout
 
