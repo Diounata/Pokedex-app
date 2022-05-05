@@ -12,7 +12,7 @@ const StatusContainer = styled.View`
 `;
 
 const Title = styled.Text<PokemonTypeProps>`
-  width: 53px;
+  width: 60px;
 
   margin-right: 8px;
   padding: 6px 8px;

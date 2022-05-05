@@ -13,7 +13,8 @@
 </p>
 
 <p align='center'>
-<img src="https://github.com/Diounata/Pokedex-app/blob/main/.github/app-preview.png" width="300px" alt="App preview" />
+<img src="https://github.com/Diounata/Pokedex-app/blob/main/.github/home.png" width="300px" alt="Home screen" />
+<img src="https://github.com/Diounata/Pokedex-app/blob/main/.github/pokemon.png" width="300px" alt="Pokemon screen" />
 </p>
 
 ## :dart: Overview
