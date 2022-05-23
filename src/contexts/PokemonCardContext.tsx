@@ -9,6 +9,7 @@ type OrderProps = 'increasing' | 'decreasing';
 interface ChildrenProps {
   children: ReactNode;
 }
+
 interface ContextProps {
   currentPageData: CurrentPageDataProps;
   page: number;
@@ -50,14 +51,21 @@ export function PokemonCardProvider({ children }: ChildrenProps) {
   }
 
   useEffect(() => {
+    let unmounted = false;
+
     if (page === -1) return;
 
-    const startIndex = (page - 1) * 8;
-    const endIndex = startIndex + 8;
+    if (!unmounted) {
+      const startIndex = (page - 1) * 8;
+      const endIndex = startIndex + 8;
+      const newPokemonData = pokemonList.slice(startIndex, endIndex);
 
-    const newPokemonData = pokemonList.slice(startIndex, endIndex);
+      setCurrentPageData(newPokemonData);
+    }
 
-    setCurrentPageData(newPokemonData);
+    return () => {
+      unmounted = true;
+    };
   }, [page, order]);
 
   useEffect(() => {
